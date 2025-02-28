@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appSettings>
+        <setting name="AppName" value="MyApplication" />
+        <setting name="Version" value="1.0.0" />
+        <setting name="Environment" value="Production" />
+        <setting name="MaxConnections" value="100" />
+        <setting name="Timeout" value="30" />
+    </appSettings>
+
+    <database>
+        <server name="PrimaryDB">
+            <connectionString>Server=primary.db.example.com;Database=MyDB;User Id=admin;Password=secret;</connectionString>
+            <timeout>15</timeout>
+            <retryAttempts>3</retryAttempts>
+        </server>
+        <server name="SecondaryDB">
+            <connectionString>Server=secondary.db.example.com;Database=MyDB;User Id=admin;Password=secret;</connectionString>
+            <timeout>10</timeout>
+            <retryAttempts>5</retryAttempts>
+        </server>
+    </database>
+
+    <logging>
+        <logLevel value="Information" />
+        <logPath value="/var/logs/myapp/" />
+        <maxFileSize value="10MB" />
+        <retentionPolicy value="30Days" />
+    </logging>
+
+    <features>
+        <feature name="EmailNotifications" enabled="true" />
+        <feature name="SMSNotifications" enabled="false" />
+        <feature name="PushNotifications" enabled="true" />
+    </features>
+
+    <users>
+        <user id="1">
+            <name>John Doe</name>
+            <email>john.doe@example.com</email>
+            <role>Admin</role>
+        </user>
+        <user id="2">
+            <name>Jane Smith</name>
+            <email>jane.smith@example.com</email>
+            <role>User</role>
+        </user>
+    </users>
+</configuration>
